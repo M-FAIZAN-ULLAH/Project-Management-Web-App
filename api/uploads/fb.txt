@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "743208288346",
+    "project_id": "flutterproject-ede74",
+    "storage_bucket": "flutterproject-ede74.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743208288346:android:c33cdf8c5f785aa3319863",
+        "android_client_info": {
+          "package_name": "com.example.hireachef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743208288346-94rsec9ujnpajkbvotgost137qkk24p1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbu_LDOCvwGN6r_P7p-69WwEcpyM0aFhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743208288346-94rsec9ujnpajkbvotgost137qkk24p1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

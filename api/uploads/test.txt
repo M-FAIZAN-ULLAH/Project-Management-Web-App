@@ -1,0 +1,24 @@
+--supervisor side
+	-- move add idea Button from Proposal to Ideas
+	-- rename Task Submitted + Idea Submitted to Task + Ideas
+	-- Add Accept / Reject Button On Idea-Submitted(Idea Tab) 
+
+
+--student Side
+	-- Show Status Submitted instead of removing the row (Task / Plan / Idea)
+	-- Hide Completed Plans 
+	-- Add submit Button on file upload (Task/ Plan /Idea)
+
+--cordinator side
+	-- Show Accepted proposal from supervisor and assign Evaluator to Project.
+	-- Show Plans added by cordinator only
+	-- Use Buttons on Plan History Download File
+	-- Show Projects on Dashboard and after clicking on them show all tasks submitted by students
+
+--hod side
+	-- Show all plans added by all cordinators
+	-- Remove Task History and show all projects on dashboard and after clicking on them show All tasks assigned to students and their response.
+
+--evaluator side
+	-- remove ADD REMARKS textfield
+	-- add column that displays type (TASK/PLAN)

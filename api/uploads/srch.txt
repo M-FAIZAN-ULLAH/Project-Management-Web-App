@@ -1,0 +1,73 @@
+Stream<QuerySnapshot> getData() {
+    if (searchText != '') {
+      if (Helper.type == 4) {
+        return FirebaseFirestore.instance
+            .collection('cuisines')
+            .where('name', whereIn: [searchText.toLowerCase(), searchText.toUpperCase()])
+            .snapshots();
+      } else {
+        var completer = Completer<Stream<QuerySnapshot>>();
+
+        var data = FirebaseFirestore.instance
+            .collection('users')
+            .where('type', isEqualTo: Helper.type)
+            .where('username', whereIn: [searchText.toLowerCase(), searchText.toUpperCase()])
+            .snapshots();
+
+        StreamSubscription<QuerySnapshot>? dataSubscription;
+        dataSubscription = data.listen((QuerySnapshot snapshot) {
+          int length = snapshot.docs.length;
+
+          if (length != 0) {
+            dataSubscription!.cancel();
+            completer.complete(data);
+          } else {
+
+            var dishes = FirebaseFirestore.instance
+                .collection('dishes')
+                .where('name', whereIn: [searchText.toLowerCase(), searchText.toUpperCase()])
+                .snapshots();
+
+            StreamSubscription<QuerySnapshot>? dishesSubscription;
+            var nestedCompleter = Completer<Stream<QuerySnapshot>>();
+
+            dishes.forEach((element) {
+
+                element.docs.forEach((e) {
+                   print('oooooo');
+                   print(e.data()['uid']);
+                });
+
+            });
+
+            dishesSubscription = dishes.listen((QuerySnapshot dishSnapshot) {
+              for (var doc in dishSnapshot.docs) {
+                String uid = doc.id;
+                print('uid ${uid}');
+                var users = FirebaseFirestore.instance.collection('users').doc(uid).snapshots();
+                dishesSubscription!.cancel();
+                nestedCompleter.complete(users as FutureOr<Stream<QuerySnapshot<Object?>>>?);
+                break;
+              }
+            });
+
+            nestedCompleter.future.then((stream) {
+              completer.complete(stream);
+            });
+          }
+        });
+
+        return completer.future.asStream().asyncExpand((stream) => stream);
+      }
+    } else {
+      if (Helper.type == 4) {
+        return FirebaseFirestore.instance.collection('cuisines').snapshots();
+      } else {
+        return FirebaseFirestore.instance
+            .collection('users')
+            .where('type', isEqualTo: Helper.type)
+            .snapshots();
+      }
+    }
+  }
+

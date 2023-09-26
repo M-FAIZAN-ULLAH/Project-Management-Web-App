@@ -1,0 +1,39 @@
+-- active card
+
+
+-- Student Side
+-- add idea tab in student => (done) => (download file functionality remains)
+-- submit button plans =>  (done)
+-- tasks download + submit button => (done)
+-- remove search bar add role => (done)
+
+
+-- Cordinator Side
+-- task history (task detail and submission status)    
+   and show to cordinator (done)
+-- assign evaluator  (done)
+-- add tabs specific details for users (remaining)
+-- assign 2 evaluators (right now assigning 1 evaluator )
+-- show graph of plan management (no of student x plan 
+   name) (remaining)
+-- all projects details (done)
+
+-- Supervisor side
+-- change cards (done card button remains)
+-- 
+
+
+
+-- supervisor + student + evaluator will be added by 
+   cordinator  (done)
+-- hod will only add cordinator  => (done)
+-- 
+
+
+-- HOD side
+-- all project details (front-end done)
+
+
+
+-- evaluator side
+-- add document after evaluation (done)
